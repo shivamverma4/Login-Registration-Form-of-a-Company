@@ -1,0 +1,132 @@
+body {
+	
+	font-family:Century Gothic;
+	background-image:url("img/bsit.jpg");
+	background-size:100% auto;
+	text-align:center;
+	background-repeat:no-repeatx;
+}
+
+sub{
+	font-size:15;
+	color:black;
+}
+.topnav{
+	padding:25px;
+	background-color:#e64626;
+	position:fixed;
+	font-size: 30;
+	top:0;
+	right:0;
+	left:0;
+	z-index:999;
+	color:white;
+	text-align:left;
+}
+
+a{
+	color:blue;	
+	text-decoration:none;
+	transition: all .2s ease-in-out;
+}
+
+a:hover{
+	
+	transform: scale(1.1);
+}
+
+button {
+    background-color: white;
+    color: #e64626;
+    padding: 10px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 30;
+	border:2px solid #e64626;
+	border-radius: 8px;
+	transition-duration: 0.4s;
+}
+
+button:hover{
+	background-color:#e64626;
+	color: white;
+}
+
+input{
+	border: 1px solid black;
+	border-radius: 4px;
+	box-sizing: border-box;
+	font-size: 30px;	
+}
+.Check{
+	width: 40px;
+	height: 20px;
+}
+input:focus {
+    border: 2px solid black;
+	border-radius: 4px;
+}
+
+form{
+	opacity:0.9;
+	padding:10px;
+	padding-bottom:30px;
+	font-size:30;
+	color: black;
+	background: white;
+	width: 50%;
+    margin-left:auto;
+	margin-right:auto;
+    font-family:sans-serif;
+	text-align:center;
+	border:2px solid black;
+}
+.login-help {
+  margin: 20px;
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  text-shadow:#2a85a1;
+}
+
+
+ ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #e64626;
+	width:100%
+}
+
+ li {
+    float: left;
+}
+
+ li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+ li a:hover:not(.active) {
+    background-color: #111;
+}
+.active {
+    background-color: #4CAF50;
+}
+
+
+ 
+.notes{
+    width: 100%;
+	font-size:15;
+    height: 150px;
+    padding: 5px 5px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}

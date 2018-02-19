@@ -1,0 +1,67 @@
+<html>
+	<header>
+	<nav class="topnav">
+		<a href="login.html" style="float:left; font-size:60;padding-left:50px;color:white">Saletancy</a>
+		<a href="login.html" style="float:right; font-size:20;padding-right:175px;color:white">Login</a>
+		<a href="index.html" style="float:right; font-size:20;padding-right:50px;color:white">Home</a>
+	</nav>
+	
+	</header>
+	<br><br><br><br><br><br>
+	<body>
+		<form>
+			<link href="css\style.css" rel="stylesheet" />
+			<div>
+				<h1 style="color:#e64626">Login</h1>
+				<label>Email<span style="color:white">___</span>   </label>
+				<input type=text placeholder="For eg :user@example.com" id="Email" ></input>
+				<br><br>
+				
+				<label>Password </label>
+				<input type=password placeholder="******" id="Password"></input>
+				<br><br>	
+			
+				<input type=checkbox class="Check">Remember me</input>
+				<br><br>
+			
+				<button type=button id="b1" onclick="check(this.form)">Login</button>
+				<br>
+			</div>
+		
+		
+			<div class="login-help">
+				<p><a href="register.html">Not a Member? Register Online.</a></p>
+				<p>Forgot your password? <a href="forgot.html">Click here to reset it</a></p>
+			</div>
+		
+		</form>
+	</body>
+	<script>
+	
+		function check(form){
+				if(document.getElementById("Email").value=="vadmin" && document.getElementById("Password").value=="vadmin")
+                                window.location.replace("adminDashboard.html");
+                                else
+                                {
+					var xmlhttp;
+					xmlhttp=new XMLHttpRequest();
+					xmlhttp.open("GET","login.php?email="+document.getElementById("Email").value+"&pswrd="+document.getElementById("Password").value,true);
+					xmlhttp.send(null);
+					xmlhttp.onreadystatechange = function()
+					{
+						if (this.readyState == 4 && this.status == 200)
+						{
+							if(this.responseText=="TRUE")
+                                                        {
+                                                                window.location.replace("Dashboard.html");
+                                                         }
+							else
+								window.alert("Wrong Username or Password");
+						}
+					}
+                                 }
+				
+			};
+	</script>
+	
+</html>

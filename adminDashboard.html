@@ -1,0 +1,61 @@
+<html>
+	<title>Admin Dashboard</title>
+	<header>
+	<nav class="topnav">
+		<a href="login.html" style="float:left; font-size:60;padding-left:50px;color:white">Saletancy</a>
+		<a href="login.html" style="float:right; font-size:20;padding-right:175px;color:white">Logout</a>
+		<a href="index.html" style="float:right; font-size:20;padding-right:50px;color:white">Home</a>
+	</nav>
+
+	<link href="css\style.css" rel="stylesheet" />
+	</header>
+	<br><br><br><br><br><br>
+	<body>
+		
+			<ul>
+					<li><a  class="active" href="adminDashboard.html">Dashboard</a></li>
+			</ul>
+			<style>
+				table,td,tr,th
+				{border:2px solid black;
+				padding:15px;
+				border-spacing:4px;
+				border-collapse:collapse;
+				float:center;
+				font-size:30;
+				}
+			</style>
+			<div style="margin:100px;padding:50px;background:white">
+				
+				<center>
+				<table >
+					  <thead>
+						<tr>
+
+						  <th>Name</th>
+						  <th>Email</th>
+						  <th>Password</th>
+						</tr>
+					  </thead>
+					  <tbody id="tbl">
+						
+					  </tbody>
+				</table>
+				</center>
+			</div>
+        
+	</body>
+	<script>
+		var xmlhttp;
+		xmlhttp=new XMLHttpRequest();
+		xmlhttp.open("GET","getusers.php?",true);
+		xmlhttp.send(null);
+		xmlhttp.onreadystatechange = function()
+		{
+			if (this.readyState == 4 && this.status == 200)
+			{
+				tbl.innerHTML=tbl.innerHTML+this.responseText;
+			}
+		}
+	</script>
+</html>

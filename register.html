@@ -1,0 +1,61 @@
+<html>
+
+	<header>
+	<nav class="topnav">
+		<a href="login.html" style="float:left; font-size:60;padding-left:50px;color:white">Saletancy</a>
+		<a href="login.html" style="float:right; font-size:20;padding-right:175px;color:white">Login</a>
+		<a href="index.html" style="float:right; font-size:20;padding-right:50px;color:white">Home</a>
+	</nav>
+	
+	</header>
+	<br><br><br><br><br><br>
+	<body>
+		<link href="css\style.css" rel="stylesheet" />
+		<script>
+			function validation(){
+				if(document.getElementById("pswrd").value!=document.getElementById("Rpswrd").value)
+					window.alert("Passwords not matching!!!Please re-enter");
+				else
+				{
+				var xmlhttp;
+				xmlhttp=new XMLHttpRequest();
+				xmlhttp.open("GET","insert.php?name="+document.getElementById("fname").value+" "+document.getElementById("lname").value+"&email="+document.getElementById("email").value+"&phno="+document.getElementById("phno").value+"&pswrd="+document.getElementById("pswrd").value,true);
+				xmlhttp.send(null);
+				window.alert("You have been registered");
+				window.location.replace("login.html");
+				}
+				
+			};
+		</script>
+		<form style="padding-bottom:500px">
+			 
+			<div>
+				<h1 style="color:#e64626">Registration form</h1>
+				<br>
+				<input type=text placeholder="First name" id="fname" style="width:22.5%"></input>
+				<input type=text placeholder="Last name" id="lname" style="width:22.5%"></input>
+				<br><br>
+				<input type=text placeholder="Class" id="class"></input>
+				<br><br>
+				<input type=text placeholder="Roll No." id="rollNo"></input>
+				<br><br>
+				
+				<input type=text placeholder="Email" id="email"></input>
+				<br><br>
+				<input type=text placeholder="Phone Number" id="phno"></input>
+				<br><br>
+				<label>Upload: </label>
+			                                <input type="file" name="file" id="file"/>
+				<br><br>
+				<input type=password placeholder="Password" id="pswrd"></input>
+				<br><br>
+				<input type=password placeholder="Re-enter password" id="Rpswrd"></input>
+				<br><br>
+				<sub>By clicking Sign Up, you agree to our terms and that you have<br> read our Data Policy, including our Cookie Use.</sub>
+				<br><br><br>
+				<button type=button id="b1" onclick="validation()">Sign Up</button>
+				<br>
+			</div>
+		</form> 
+	</body>
+</html>
